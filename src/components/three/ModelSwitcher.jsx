@@ -25,11 +25,14 @@ const moveGroup = (group, x) => {
     gsap.to(group.position, {x, duration: ANIMATION_DURATION})
 }
 
+const SCALE_LARGE_DESKTOP = 0.08
+const SCALE_LARGE_MOBILE = 0.05;
+
 const ModelSwitcher = ({ scale, isMobile }) => {
     const smallMacbookRef = useRef();
     const largeMacbookRef = useRef();
 
-    const showLargeMacbook = scale === 0.08 || scale === 0.05;
+    const showLargeMacbook = scale === SCALE_LARGE_DESKTOP || scale === SCALE_LARGE_MOBILE;
 
     useGSAP(() => {
         if(showLargeMacbook) {
